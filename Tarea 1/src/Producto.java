@@ -28,12 +28,37 @@ abstract class Producto {
         return serie;
     }
 }
-/**Subclase de Producto, representa la bebida CocaCola*/
-class CocaCola extends Producto {
+/**Subclase de Producto, representa modelo para Bebida*/
+abstract class Bebida extends Producto{
+    private int serie;
+    public Producto(int s1) {
+        serie = s1;
+    }
+    public abstract String consumir();
+    public int getSerie() {
+        int s1 = serie;
+        return serie;
+    }
+}
+/**Subclase de Producto, representa modelo para Dulce*/
+abstract class Dulce extends Producto{
+    private int serie;
+    public Producto(int s2) {
+        serie = s2;
+    }
+    public abstract String consumir();
+    public int getSerie() {
+        int s2 = serie;
+        return serie;
+    }
+}
+
+/**Subclase de Bebida, representa la bebida CocaCola*/
+class CocaCola extends Bebida {
     /**Constructor para los productos CocaCola
-     * @param s int*/
-    public CocaCola(int s) {
-        super(s);
+     * @param s1 int*/
+    public CocaCola(int s1) {
+        super(s1);
     }
     /**Se sobreescribe el método consumir()
      * @return "cocacola*/
@@ -42,13 +67,13 @@ class CocaCola extends Producto {
         return "cocacola";
     }
 }
-/**Subclase de Producto, representa la bebida Sprite*/
-class Sprite extends Producto {
+/**Subclase de Bebida, representa la bebida Sprite*/
+class Sprite extends Bebida {
     /**Constructor para los productos Sprite
-     * @param s int
+     * @param s1 int
      */
-    public Sprite(int s) {
-        super(s);
+    public Sprite(int s1) {
+        super(s1);
     }
     /**Se sobreescribe el metodo consumir()
      * @return "sprite"*/
@@ -57,22 +82,22 @@ class Sprite extends Producto {
         return "sprite";
     }
 }
-/**Subclase de Producto, representa las galletas Obsesión*/
-class Obsesion extends Producto{
-    /**Constructor para los productos Obsesion
-     * @param s int */
-    public Obsesion(int s){super(s);}
+/**Subclase de Dulce, representa las galletas Obsesión*/
+class Snickers extends Dulce{
+    /**Constructor para Snickers
+     * @param s2 int */
+    public Snickers(int s2){super(s2);}
     /**Se sobreescribe el metodo consumir()
-     * @return "Galleta Obsesion" */
+     * @return "Snicker" */
     @Override
-    public String consumir() {return "Galleta obsesion";}
+    public String consumir() {return "Snicker";}
 }
-/**Subclase de Producto, representa las galletas Costa*/
-class Costa extends Producto{
-    /**Constructor para los productos Costa
-     * @param s int */
-    public Costa(int s){super(s);}
+/**Subclase de Dulce, representa los Super8*/
+class Super8 extends Dulce{
+    /**Constructor para los Super8
+     * @param s2 int */
+    public Super8(int s2){super(s2);}
     /**Se sobreescribe el metodo consumir()
-     * @return String "Galleta Costa" */
-    public String consumir(){return "Galleta Costa";}
+     * @return String "Super8" */
+    public String consumir(){return "Super8";}
 }
