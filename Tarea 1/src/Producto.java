@@ -9,14 +9,11 @@
 
 abstract class Producto {
 
-    /** se declara int que funciona como un identificador del producto
-     * @param s único int
-     */
-
+    /** se declara int que funciona como un identificador del producto*/
     private int serie;
     /**Constructor de Producto
      * @param s único int
-     * @return el valor entero de s */
+     el valor entero de s */
     public Producto(int s) {
         serie = s;
     }
@@ -31,24 +28,28 @@ abstract class Producto {
 /**Subclase de Producto, representa modelo para Bebida*/
 abstract class Bebida extends Producto{
     private int serie;
-    public Producto(int s1) {
-        serie = s1;
+    /**
+     * Constructor de Producto
+     * @param s único int*/
+    public Bebida(int s) {
+        super(s);
     }
+
     public abstract String consumir();
     public int getSerie() {
-        int s1 = serie;
+        int s = serie;
         return serie;
     }
 }
 /**Subclase de Producto, representa modelo para Dulce*/
 abstract class Dulce extends Producto{
     private int serie;
-    public Producto(int s2) {
-        serie = s2;
+    public Dulce(int s) {
+        super(s);
     }
     public abstract String consumir();
     public int getSerie() {
-        int s2 = serie;
+        int s = serie;
         return serie;
     }
 }
@@ -82,7 +83,7 @@ class Sprite extends Bebida {
         return "sprite";
     }
 }
-/**Subclase de Dulce, representa las galletas Obsesión*/
+/**Subclase de Dulce, representa los Snickers*/
 class Snickers extends Dulce{
     /**Constructor para Snickers
      * @param s2 int */

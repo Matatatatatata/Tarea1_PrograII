@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 class Deposito<T>{
     private ArrayList<T> items;
@@ -5,7 +6,7 @@ class Deposito<T>{
      con los productos o monedas (simboliza
      el stock de "x" producto o moneda*/
     public Deposito(){
-        items = new ArrayList<T>();
+        items = new ArrayList<>();
     }
     /**método getItem() no tiene parámetros,
      se encarga de obtener un elemento
@@ -20,11 +21,12 @@ class Deposito<T>{
           return null;
 
         } else {
-            T ret = items.get(0);
+            T ret = (T)items.get(0);
             items.remove(0);
             return ret;
         }
     }
+
     /**método addItem se encarga de agregar un elemento
      * @param item puede ser tanto un producto como moneda
      que se agregue

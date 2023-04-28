@@ -39,7 +39,7 @@ class Expendedor {
         }
     }
 
-    public <T> comprarProducto(Moneda peseta, int cual) {
+    public <T> T comprarProducto(Moneda peseta, int cual) {
         T ret = null;
         int vuelto = 0;
 
@@ -77,7 +77,6 @@ class Expendedor {
                 }
             }
         }
-
         if (ret != null) {
             vuelto = vuelto / 100;
             for (int i = 0; i < vuelto; i++) {
@@ -89,9 +88,7 @@ class Expendedor {
         }
         return ret;
     }
-
-
-    public T getVuelto() {
+    public <T> getVuelto() {
         return depVuelto.getItem();
     }
 }
